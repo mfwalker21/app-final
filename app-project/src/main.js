@@ -1,8 +1,9 @@
+// importing css and JS for jokes to appear
 import'./style.css';
 import{renderJoke} from './render.js';
 
-
-function getJokeFromAPI(){
+// Function needed to fetch jokes from the API with then and catch
+function JokeFromAPI(){
   fetch('https://v2.jokeapi.dev/joke/Any')
     .then(function(response) {
       return response.json(); 
@@ -17,11 +18,12 @@ function getJokeFromAPI(){
       console.log(error); 
     });
 }
-
+// Will need button for user to click to get another joke
 function addButtonClickListener(){
   const button = document.getElementById('getJoke');
-  if (button) { button.addEventListener('click', function() {getJokeFromAPI();
+  if (button) { button.addEventListener('click', function() {JokeFromAPI();
     });
   }
 }
-getJokeFromAPI();
+// immediately allows for a joke to appear
+JokeFromAPI();
