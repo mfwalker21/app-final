@@ -12,9 +12,10 @@ function JokeFromAPI(){
       renderJoke(data);       
       addButtonClickListener(); 
     })
+    // If user gets to end of jokes list
     .catch(function(error) {
       const app= document.getElementById('app');
-      app.innerHTML = '<p>Darn, No More Jokes</p>';
+      app.innerHTML = '<p>Sorry! We are laughed out. No more Jokes </p>';
       console.log(error); 
     });
 }
